@@ -1,0 +1,142 @@
+/* Bare testing modal window - minimal styles */
+
+.quiz-container {
+    max-width: 100%;
+    padding: 20px;
+    background: white;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quiz-header h2 {
+    margin: 0 0 10px 0;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.question-card {
+    margin-bottom: 20px;
+}
+
+.question-text h3 {
+    margin: 0 0 15px 0;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .answers-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.answer-option {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: white;
+}
+
+.answer-option:hover {
+    background: #f0f0f0;
+}
+
+.answer-option.selected {
+    background: #007bff;
+    color: white;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn.prev-btn {
+    background: #f8f9fa;
+}
+
+.nav-btn.next-btn {
+    background: #007bff;
+    color: white;
+}
+
+.nav-btn.submit-btn {
+    background: #28a745;
+    color: white;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007bff;
+}
+
+/* Results */
+.quiz-results {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.results-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mistakes-section {
+    margin-top: 20px;
+}
+
+.mistake-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.finish-btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

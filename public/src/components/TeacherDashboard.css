@@ -1,0 +1,1526 @@
+.teacher-dashboard-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.dashboard-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #ff3742;
+    transform: translateY(-2px);
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatar-container {
+    position: relative;
+    z-index: 10000;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #667eea;
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-change-indicator {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.avatar-selector {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    min-width: 300px;
+}
+
+.avatar-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.avatar-option {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.avatar-option.selected {
+    border-color: #667eea;
+}
+
+.avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info h2 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.subject {
+    color: #6c757d;
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+}
+
+.teacher-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.dashboard-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    text-align: center;
+    position: relative;
+}
+
+.nav-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.section-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.section-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.group-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.group-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.group-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.group-status.complete {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.group-status.partial {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.group-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.group-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.group-stat .stat-label {
+    font-size: 0.75rem;
+}
+
+.group-stat .stat-value {
+    font-size: 1rem;
+}
+
+.students-list {
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.students-list h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.student-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.student-item:hover {
+    background-color: #f8f9fa;
+}
+
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.student-name {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.student-score {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.student-actions .status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.status.active {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.status.inactive {
+    background: #f5f5f5;
+    color: #9e9e9e;
+}
+
+.tests-management-content,
+.materials-management-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.create-test-card,
+.create-material-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.create-test-card h3,
+.create-material-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.create-test-card p,
+.create-material-card p {
+    margin: 极 0 1.5rem 0;
+    color: #6c757d;
+}
+
+.create-test-btn,
+.create-material-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 极.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.create-material-btn {
+    background: #17a2b8;
+}
+
+.create-test-btn:hover,
+.create-material-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.existing-tests h3,
+.existing-materials h3 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.tests-list,
+.materials-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.materials-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+}
+
+.test-management-card,
+.material-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.material-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 180px;
+}
+
+.material-card:hover {
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+}
+
+.test-management-card h4,
+.material-card h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 3;
+}
+
+.test-management-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+}
+
+.test-management-info span {
+    padding: 0.25rem 0.5rem;
+    background: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #6c757d;
+    position: relative;
+    z-index: 4;
+}
+
+.test-management-actions,
+.material-actions {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.edit-btn,
+.results-btn,
+.delete-btn,
+.view-student-cabinet-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    position: relative;
+    z-index: 20;
+}
+
+.edit-btn {
+    background: #007bff;
+    color: white;
+}
+
+.results-btn {
+    background: #17a2b8;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.view-student-cabinet-btn {
+    background: #667eea;
+    color: white;
+    margin-top: 1rem;
+}
+
+.edit-btn:hover,
+.results-btn:hover,
+.delete-btn:hover,
+.view-student-cabinet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 5000;
+}
+
+.create-modal-overlay {
+    z-index: 6000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3001;
+    overflow-y: auto;
+}
+
+.modal-body {
+    flex: 1;
+    margin-bottom: 30px;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.create-modal-content {
+    z-index: 6001;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2002;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.student-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 3;
+}
+
+.student-summary .student-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-info h极 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.student-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.test-result-detail {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 3;
+}
+
+.test-result-detail h4 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.test-result-detail h4.deleted-test {
+    color: #6c757d;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.test-result-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.score {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.mistakes-section h5 {
+    margin: 1rem 0 0.5rem 0;
+    color: #dc3545;
+    font-size: 0.9rem;
+}
+
+.test-mistakes {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.test-mistakes h5 {
+    margin: 0 0 0.75rem 0;
+    color: #dc3545;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.mistakes-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style: none;
+}
+
+.mistakes-list li {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    background: #fff5f5;
+    border-radius: 6px;
+    border-left: 3px solid #dc3545;
+}
+
+.mistake-answer {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.wrong-answer {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.correct-answer {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2.5rem;
+    color: #6c757d;
+}
+
+/* Стили для форм */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 6;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.question-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+    position: relative;
+    z-index: 5;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 6;
+}
+
+.add-question-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5极;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.material-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.material-info {
+    position: relative;
+    z-index: 3;
+}
+
+.material-info p {
+    margin: 0 0 0.75rem 0;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.material-date,
+.material-group {
+    font-size: 0.75rem;
+    color: #999;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.file-upload-input {
+    padding: 0.5rem;
+    border: 1px dashed #667eea;
+    border-radius: 5px;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+.file-preview {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #e8f5e8;
+    border-radius: 5px;
+    font-size: 0.875rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 1rem;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .teacher-stats {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .dashboard-navigation {
+        flex-direction: column;
+    }
+
+    .groups-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .group-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    .group-stats {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .student-summary {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .student-stats {
+        justify-content: center;
+    }
+
+    .test-management-actions,
+    .material-actions {
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .results-btn,
+    .delete-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .test-management-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Исправления для перекрытия элементов */
+.test-management-card,
+.material-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.test-management-card .test-management-info,
+.material-card .material-info {
+    position: relative;
+    z-index: 5;
+}
+
+.test-management-card .test-management-actions,
+.material-card .material-actions {
+    position: relative;
+    z-index: 20;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Убедимся, что кнопки кликабельны */
+.edit-btn,
+.results-btn,
+.delete-btn {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Focus состояния для accessibility */
+.edit-btn:focus,
+.results-btn:focus,
+.delete-btn:focus,
+.nav-btn:focus,
+.logout-btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Состояния disabled */
+.edit-btn:disabled,
+.results-btn:disabled,
+.delete-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Новые стили для статистики и кнопок */
+.view-student-cabinet-btn {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    padding: 0.5rem;
+}
+
+/* Исправление для карточек материалов */
+.material-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.material-info {
+    flex: 1;
+}
+
+.material-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Исправление для текста в карточках */
+.material-card h4,
+.test-management-card h4 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+}
+
+.material-info p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+}
+
+/* Улучшение отступов для лучшей читаемости */
+.group-card,
+.test-management-card,
+.material-card {
+    padding: 1.25rem;
+}
+
+/* Улучшение видимости текста на фоне */
+.group-card *,
+.test-management-card *,
+.material-card * {
+    position: relative;
+    z-index: 10;
+}
+
+/* Улучшение контрастности */
+.group-stat .stat-value,
+.student-score,
+.material-date,
+.material-group {
+    font-weight: 600;
+}
+
+/* Стили для раздела статистики */
+.statistics-section {
+    padding: 2rem;
+}
+
+.statistics-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.overall-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.overall-stats-cards .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overall-stats-cards .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.overall-stats-cards .stat-card h3 {
+    margin: 0 0 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.overall-stats-cards .stat-card .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin: 0;
+}
+
+.groups-statistics {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.groups-statistics h3 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.groups-stats-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.group-stat-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease;
+}
+
+.group-stat-card:hover {
+    transform: translateX(5px);
+}
+
+.group-stat-card h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.group-stat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stat-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-detail:last-child {
+    border-bottom: none;
+}
+
+.stat-detail span:first-child {
+    color: #666;
+    font-weight: 500;
+}
+
+.stat-detail span:last-child {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.top-students {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-students h3 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.top-students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.top-student-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top-student-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-rank {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.student-avatar-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.student-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.student-details .student-name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.student-details .student-stats {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Улучшение стилей для загрузки файлов */
+.file-upload-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px dashed #667eea;
+    border-radius: 8px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.file-upload-input:hover {
+    border-color: #764ba2;
+    background: #f0f0f0;
+}
+
+.file-preview {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: #e8f4f8;
+    border-radius: 6px;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-preview::before {
+    content: "📎";
+    font-size: 1.2rem;
+}
+
+.material-file {
+    margin-top: 0.5rem;
+}
+
+.material-file a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: #f0f4ff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.material-file a:hover {
+    background: #e0e8ff;
+    transform: translateY(-2px);
+}
+
+.material-file a::before {
+    content: "⬇️";
+    font-size: 1.1rem;
+}
+
+.material-no-file {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #fff3cd;
+    border-radius: 6px;
+    color: #856404;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.file-size {
+    color: #666;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+.file-hint {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Выбор аватара ученика */
+.student-avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 10px;
+}
+
+.student-avatar-option {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 6px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.student-avatar-option.selected {
+    border-color: #667eea;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.25);
+    background: #eef0ff;
+}
+
+.student-avatar-option img {
+    width: 100%;
+    height: 100%;
+    max-height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Адаптивность для статистики */
+@media (max-width: 768px) {
+    .overall-stats-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .groups-stats-list {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-stats-cards .stat-card .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .groups-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .group-card {
+        padding: 1rem;
+    }
+
+    .student-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .delete-student-btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .test-management-card,
+    .material-card {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .create-test-btn,
+    .create-material-btn {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .nav-btn {
+        min-width: auto;
+        padding: 0.75rem;
+        font-size: 14px;
+    }
+
+    .header-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .logout-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+.edit-group-name-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.edit-group-name-btn:hover {
+    background: #5a6fd8;
+    transform: scale(1.05);
+}
+
+.delete-group-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.delete-group-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+.delete-student-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.delete-student-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+}
+}
+
+@media (max-width: 360px) {
+    .dashboard-content {
+        padding: 0.5rem;
+    }
+
+    .profile-card {
+        padding: 1rem;
+    }
+
+    .group-card {
+        padding: 0.75rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+}
