@@ -6,9 +6,11 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #333; /* Добавлен цвет текста для видимости */
+    background-color: #f0f0f0; /* Добавлен базовый фон */
 
     /* Вот ключевые свойства для фона */
-    background-image: url('/fonLog.png');
+    background-image: url('/tests-for-music.io/fonLog.png');
     /* Путь из папки public */
     background-size: cover;
     /* Растянуть картинку на весь экран */
@@ -25,8 +27,33 @@ body {
 /* Если контент плохо читается на фоне, можно добавить полупрозрачный слой */
 #root {
     min-height: 100vh;
-    /* Можно добавить легкий затемняющий фон для лучшей читаемости текста */
-    /* background-color: rgba(255, 255, 255, 0.8); Белый с прозрачностью */
-    /* Или темный, если картинка светлая: */
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для читаемости */
+}
+
+/* Стили для подсказок (tooltip) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
